@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.htech.demo.R;
@@ -32,6 +33,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
                 .inflate(R.layout.row_customer_list, parent, false);
 
 
+
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
@@ -39,8 +41,9 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
-        final Customer product = mCustomer.get(position);
-
+        final Customer customer = mCustomer.get(position);
+        holder.tvName.setText(customer.getCustomerName());
+        holder.tvAccountNumber.setText(customer.getAccountNumber());
     }
 
     @Override
@@ -50,11 +53,15 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
+        private final TextView tvName;
+        private final TextView tvAccountNumber;
         public SimpleDraweeView mImageView;
 
         public ViewHolder(View view) {
             super(view);
             mImageView = (SimpleDraweeView) view.findViewById(R.id.rclist_ivPhoto);
+            tvName = (TextView) view.findViewById(R.id.rclist_tvName);
+            tvAccountNumber = (TextView) view.findViewById(R.id.rclist_tvAccountNumber);
         }
     }
 }

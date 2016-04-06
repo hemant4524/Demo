@@ -64,7 +64,7 @@
             <com.toptoche.searchablespinnerlibrary.SearchableSpinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/gujarat_city" />
+                android:entries="@array/vadodara_area" />
 
 
         </LinearLayout>

@@ -60,7 +60,12 @@ public class CustomerActivity extends AppCompatActivity {
         customer3.setAccountNumber("ac004k");
         customers.add(customer3);
 
-        customers.add(customer);
+        Customer customer4 = new Customer();
+        customer4.setId(4);
+        customer4.setCustomerName("Nikunj Patel");
+        customer4.setAccountNumber("ac005nc");
+        customers.add(customer4);
+
         CustomerAdapter productAdapter = new CustomerAdapter(mContext, customers);
 
         LinearLayoutManager layoutManager
